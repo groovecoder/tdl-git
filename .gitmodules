@@ -1,0 +1,3 @@
+[submodule "themes/style/mozilla"]
+	path = themes/style/mozilla
+	url = git@github.com:groovecoder/deckjs-theme-mozilla.git

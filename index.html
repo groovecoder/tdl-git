@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="/deckjs-remote.css">
 
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="themes/style/mozilla/sandstone.aurora.css">
+	<link rel="stylesheet" href="themes/style/mozilla/sandstone.default.css">
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
@@ -40,7 +40,7 @@
 </section>
 
 <section class="slide">
-	<h2>deck.js + Hotness</h2>
+<h2><a href="https://github.com/imakewebthings/deck.js">deck.js</a> + Hotness</h2>
   <ul>
     <li><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a>: WebSockets/<a href="http://socket.io/">socket.io</a></li>
       <ul>
@@ -48,10 +48,14 @@
       </ul>
     <li><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deck.js Sandstone Theme</a></li>
       <ul>
-        <li>WITH TABZILLA!</li>
+        <li>WITH <a href="https://github.com/mozilla/tabzilla">TABZILLA!</a></li>
       </ul>
     <li><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></li>
-    <li>target="_blank"</li>
+    <li>target="_blank"
+    <pre>$('a').each(function() {
+  $(this).attr('target', '_blank');
+});</pre>
+    </li>
   </ul>
 </section>
 

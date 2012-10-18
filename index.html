@@ -35,25 +35,35 @@
 <!-- Begin slides. Just make elements with a class of slide. -->
 
 <section class="slide">
-	<h1><a href="https://github.com/imakewebthings/deck.js/">deckjs</a> &amp;<br/><a href="https://www.mozilla.org/en-US/styleguide/websites/sandstone/">mozilla sandstone</a></h1>
+	<h1>deckjs, remote &amp;<br/>mozilla sandstone</h1>
 </section>
 
 <section class="slide">
-	<h2>Hotness</h2>
+	<h2>deck.js + Hotness</h2>
   <ul>
-    <li>WebSockets/<a href="http://socket.io/">socket.io</a></li>
+    <li><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a>: WebSockets/<a href="http://socket.io/">socket.io</a></li>
       <ul>
         <li>Deployable to <a href="http://nodejitsu.com/">nodejitsu</a></li>
       </ul>
-    <li><a href="http://sass-lang.com/">SASS</a></li>
-    <li>Sandstone</li>
+    <li><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deck.js Sandstone Theme</a></li>
+      <ul>
+        <li>WITH TABZILLA!</li>
+      </ul>
+    <li><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></li>
+    <li>target="_blank"</li>
   </ul>
 </section>
 
 <section class="slide">
-	<h2>img's</h2>
-  <img src="https://plugins.svn.wordpress.org/promote-mdn/assets/banner-772x250.png"/>
-  <pre>&lt;img src="https://plugins.svn.wordpress.org/promote-mdn/assets/banner-772x250.png"/&gt;</pre>
+	<h2>deckjs-remote</h2>
+  <pre>&lt;script src="/deckjs-remote.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function() {
+    $.deck('remote', { server: 'http://beer-and-tell.jit.su/' });
+  });
+&lt;/script&gt;</pre>
+  <pre>node server.js</pre>
+  <pre>jitsu deploy</pre>
 </section>
 
 <section class="slide">
@@ -63,8 +73,13 @@
 </section>
 
 <section class="slide">
-	<h2>deck.iframes.js</h2>
-  <pre></pre>
+	<h2><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></h2>
+  <pre>&lt;script src="extensions/deck.iframes.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function() {
+    $.deck('iframes');
+  });
+&lt;/script&gt;</pre>
 </section>
 
 <!-- End slides. -->

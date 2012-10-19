@@ -42,30 +42,37 @@
 <section class="slide">
 <h2><a href="https://github.com/imakewebthings/deck.js">deck.js</a> + Hotness</h2>
   <ul>
-    <li><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a>: WebSockets/socket.io</li>
-      <ul>
-        <li>Deployable to <a href="http://nodejitsu.com/">nodejitsu</a></li>
-      </ul>
-    <li><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deckjs-theme-mozilla</a></li>
-      <ul>
-        <li><a href="https://www.mozilla.org/en-US/styleguide/websites/sandstone/">Sandstone</a></li>
-        <li><a href="https://github.com/mozilla/tabzilla">TABZILLA!</a></li>
-      </ul>
-    <li><a href="https://github.com/groovecoder/deckjs-iframes">deckjs-iframes</a></li>
     <li>target="_blank"</li>
+    <li>deckjs-remote: WebSockets/socket.io</li>
+      <ul>
+        <li>Deployable to nodejitsu</li>
+      </ul>
+    <li>deckjs-theme-mozilla (Sandstone)</li>
     <li>theme switching</li>
+    <li>TABZILLA!</li>
+    <li>deckjs-iframes</li>
   </ul>
 </section>
 
 <section class="slide">
-	<h2>deckjs-remote</h2>
+  <h2><a href="https://developer.mozilla.org/docs/HTML/Element/a#Attributes">target=_blank</a></h2>
+  <pre>&lt;a href="https://developer.mozilla.org/docs/HTML/Element/a#Attributes"&gt;target=_blank&lt;/a&gt;</pre>
+  <pre>$('a').each(function() {
+  $(this).attr('target', '_blank');
+});</pre>
+</section>
+
+<section class="slide">
+  <h2><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a></h2>
   <pre>&lt;script src="/deckjs-remote.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   $(function() {
     $.deck('remote', { server: 'http://beer-and-tell.jit.su/' });
   });
 &lt;/script&gt;</pre>
+  <p>Run locally</p>
   <pre>node server.js</pre>
+  <p>Deploy to <a href="http://nodejitsu.com/">nodejitsu</a></p>
   <pre>jitsu deploy</pre>
 </section>
 
@@ -78,29 +85,6 @@
 &lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.aurora.css"&gt;
 &lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.nightly.css"&gt;
  </pre>
-</section>
-
-<section class="slide">
-	<h2><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></h2>
-  <pre>&lt;script src="extensions/deck.iframes.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-  $(function() {
-    $.deck('iframes');
-  });
-&lt;/script&gt;</pre>
-</section>
-
-<section class="slide">
-	<h2>iframe's</h2>
-  <iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"></iframe>
-  <pre>&lt;iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"&gt;&lt;/iframe&gt;</pre>
-</section>
-
-<section class="slide">
-	<h2>target=_blank</h2>
-  <pre>$('a').each(function() {
-  $(this).attr('target', '_blank');
-});</pre>
 </section>
 
 <section class="slide">
@@ -119,6 +103,26 @@ $(this).keyup(function(e){
   }
 });
 </pre>
+</section>
+
+<section class="slide">
+  <h1>tabzilla</h1>
+</section>
+
+<section class="slide">
+	<h2><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></h2>
+  <pre>&lt;script src="extensions/deck.iframes.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function() {
+    $.deck('iframes');
+  });
+&lt;/script&gt;</pre>
+</section>
+
+<section class="slide">
+	<h2>iframe's</h2>
+  <iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"></iframe>
+  <pre>&lt;iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"&gt;&lt;/iframe&gt;</pre>
 </section>
 
 <section class="slide">

@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="/deckjs-remote.css">
 
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="themes/style/mozilla/sandstone.default.css">
+	<link id="theme" rel="stylesheet" href="themes/style/mozilla/sandstone.default.css">
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
@@ -42,20 +42,18 @@
 <section class="slide">
 <h2><a href="https://github.com/imakewebthings/deck.js">deck.js</a> + Hotness</h2>
   <ul>
-    <li><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a>: WebSockets/<a href="http://socket.io/">socket.io</a></li>
+    <li><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a>: WebSockets/socket.io</li>
       <ul>
         <li>Deployable to <a href="http://nodejitsu.com/">nodejitsu</a></li>
       </ul>
-    <li><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deck.js Sandstone Theme</a></li>
+    <li><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deckjs-theme-mozilla</a></li>
       <ul>
-        <li>WITH <a href="https://github.com/mozilla/tabzilla">TABZILLA!</a></li>
+        <li><a href="https://www.mozilla.org/en-US/styleguide/websites/sandstone/">Sandstone</a></li>
+        <li><a href="https://github.com/mozilla/tabzilla">TABZILLA!</a></li>
       </ul>
-    <li><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></li>
-    <li>target="_blank"
-    <pre>$('a').each(function() {
-  $(this).attr('target', '_blank');
-});</pre>
-    </li>
+    <li><a href="https://github.com/groovecoder/deckjs-iframes">deckjs-iframes</a></li>
+    <li>target="_blank"</li>
+    <li>theme switching</li>
   </ul>
 </section>
 
@@ -72,9 +70,14 @@
 </section>
 
 <section class="slide">
-	<h2>iframe's</h2>
-  <iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"></iframe>
-  <pre>&lt;iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"&gt;&lt;/iframe&gt;</pre>
+  <h2><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deckjs-theme-mozilla</a></h2>
+  <pre>&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.default.css"&gt;
+&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.firefox.css"&gt;
+&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.dark.css"&gt;
+&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.light.css"&gt;
+&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.aurora.css"&gt;
+&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.nightly.css"&gt;
+ </pre>
 </section>
 
 <section class="slide">
@@ -85,6 +88,42 @@
     $.deck('iframes');
   });
 &lt;/script&gt;</pre>
+</section>
+
+<section class="slide">
+	<h2>iframe's</h2>
+  <iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"></iframe>
+  <pre>&lt;iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"&gt;&lt;/iframe&gt;</pre>
+</section>
+
+<section class="slide">
+	<h2>target=_blank</h2>
+  <pre>$('a').each(function() {
+  $(this).attr('target', '_blank');
+});</pre>
+</section>
+
+<section class="slide">
+	<h2>theme switching</h2>
+  <pre>var key_theme_array = {};
+key_theme_array['49'] = 'default';
+key_theme_array['50'] = 'firefox';
+key_theme_array['51'] = 'light';
+key_theme_array['52'] = 'dark';
+key_theme_array['53'] = 'aurora';
+key_theme_array['54'] = 'nightly';
+$(this).keyup(function(e){
+  if (key_theme_array.hasOwnProperty(e.which)) {
+    var theme_css = 'themes/style/mozilla/sandstone.' + key_theme_array[e.which] + '.css';
+    $('#theme').attr('href', theme_css);
+  }
+});
+</pre>
+</section>
+
+<section class="slide">
+  <h2><a href="https://github.com/groovecoder/deckjs-remote#quickstart-with-slide-casting-boilerplate-presentation">quick-start</a></h2>
+  <img src="http://content.screencast.com/users/groovecoder/folders/Jing/media/d0d5289e-b7a9-47eb-be1e-2ff6bd4c3eff/00000658.png"/>
 </section>
 
 <!-- End slides. -->
@@ -139,9 +178,22 @@
     $.deck('remote', { server: 'localhost' });
     $.deck('iframes');
 	});
+  var key_theme_array = {};
+  key_theme_array['49'] = 'default';
+  key_theme_array['50'] = 'firefox';
+  key_theme_array['51'] = 'light';
+  key_theme_array['52'] = 'dark';
+  key_theme_array['53'] = 'aurora';
+  key_theme_array['54'] = 'nightly';
   $(document).ready(function(){
     $('a').each(function() {
       $(this).attr('target', '_blank');
+    });
+    $(this).keyup(function(e){
+      if (key_theme_array.hasOwnProperty(e.which)) {
+        var theme_css = 'themes/style/mozilla/sandstone.' + key_theme_array[e.which] + '.css';
+        $('#theme').attr('href', theme_css);
+      }
     });
   });
 </script>

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=1024, user-scalable=no">
 
-	<title>deckjs & mozilla sandstone</title>
+	<title>Git & GitHub | Tulsa Dev Lunch May 8, 2013</title>
 	
 	<!-- Required stylesheet -->
 	<link rel="stylesheet" href="core/deck.core.css">
@@ -25,9 +25,14 @@
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+
 	
 	<!-- Required Modernizr file -->
 	<script src="modernizr.custom.js"></script>
+
+  <style type="text/css">
+    td { padding: 1em !important; }
+  </style>
 </head>
 <body class="deck-container">
   <a href="http://www.mozilla.org/" id="tabzilla">mozilla</a>
@@ -35,99 +40,165 @@
 <!-- Begin slides. Just make elements with a class of slide. -->
 
 <section class="slide">
-  <h2>WebDev Beer &amp; Tell</h2>
-	<h1>deckjs, remote &amp;<br/>mozilla sandstone</h1>
+  <h2>Tulsa Dev Lunch May 8, 2013</h2>
+	<h1>Git & GitHub</h1>
+  <img src="https://secure.gravatar.com/avatar/878a0ea898da1701df8573ed64a5cc9d?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png"/>
 </section>
 
 <section class="slide">
-<h2><a href="https://github.com/imakewebthings/deck.js">deck.js</a> + Hotness</h2>
+  <h2>Luke Crouch (groovecoder)</h2>
   <ul>
-    <li>target="_blank"</li>
-    <li>deckjs-remote: WebSockets/socket.io</li>
-      <ul>
-        <li>Deployable to nodejitsu</li>
-      </ul>
-    <li>deckjs-theme-mozilla (Sandstone)</li>
-    <li>theme switching</li>
-    <li>TABZILLA!</li>
-    <li>deckjs-iframes</li>
+    <li>Web Engineering Manager, <a href="https://developer.mozilla.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Mozilla_Wordmark.png" style="display: inline-block; margin: 0; width: auto; height: 50px;"/></a></li>
+    <li>Chief Sherpa, <a href="http://tulsawebdevs.org/"><img src="http://tulsawebdevs.org/wp-content/themes/executive/images/twd-logo.png" style="display: inline-block; margin: 0; width: auto; height: 50px;"/></a></li>
+    <li>Brigadier, <a href="http://codefortulsa.org/"><img src="https://dl.dropboxusercontent.com/u/21969365/images/cft/cft_horizontal.png" style="display: inline-block; margin: 0; width: auto; height: 50px;"/></a></li>
+    <li>Organizer, <a href="http://200ok.us"><img src="http://200ok.us/wp-content/themes/event-manager/images/200ok.png" style="display: inline-block; margin: 0; width: auto; height: 50px;"/></a></li>
+    <li>User, <a href="https://github.com/groovecoder/">github.com/groovecoder</a></li>
+    <li>Terrible ... tweeter? twitterer? twit? <a href="http://twitter.com/groovecoder">@groovecoder</a></li>
+    <li>Even worse blogger, <a href="http://groovecoder.com">groovecoder.com</a></li>
   </ul>
 </section>
 
 <section class="slide">
-  <h2><a href="https://developer.mozilla.org/docs/HTML/Element/a#Attributes">target=_blank</a></h2>
-  <pre>&lt;a href="https://developer.mozilla.org/docs/HTML/Element/a#Attributes"&gt;target=_blank&lt;/a&gt;</pre>
-  <pre>$('a').each(function() {
-  $(this).attr('target', '_blank');
-});</pre>
+  <h2>Why is everyone going nuts about git?</h2>
+  <h3>Market share</h3>
+  <ul>
+    <li>2009 - 2.7%</li>
+    <li>2010 - 6.8%</li>
+    <li>2011 - 12.8%</li>
+    <li>2012 - 27.6%</li>
+  </ul>
+  <cite><a href="https://ianskerrett.wordpress.com/2012/06/08/eclipse-community-survey-result-for-2012/">Eclipse Community Survey 2012</a></cite>
 </section>
 
 <section class="slide">
-  <h2><a href="https://github.com/chrisjaure/deckjs-remote">deckjs-remote</a></h2>
-  <pre>&lt;script src="/deckjs-remote.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-  $(function() {
-    $.deck('remote', { server: 'http://beer-and-tell.jit.su/' });
-  });
-&lt;/script&gt;</pre>
-  <p>Run locally</p>
-  <pre>node server.js</pre>
-  <p>Deploy to <a href="http://nodejitsu.com/">nodejitsu</a></p>
-  <pre>jitsu deploy</pre>
+  <h2>&nbsp;</h2>
+  <img src="http://i2.kym-cdn.com/photos/images/newsfeed/000/316/241/37a.gif"/>
 </section>
 
 <section class="slide">
-  <h2><a href="https://github.com/groovecoder/deckjs-theme-mozilla">deckjs-theme-mozilla</a></h2>
-  <pre>&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.default.css"&gt;
-&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.firefox.css"&gt;
-&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.dark.css"&gt;
-&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.light.css"&gt;
-&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.aurora.css"&gt;
-&lt;link rel="stylesheet" href="themes/style/mozilla/sandstone.nightly.css"&gt;
- </pre>
+  <h2>Cross-Platform</h2>
+  <img src="http://www.yuuguu.com/images/features/cross-platform.png"/>
 </section>
 
 <section class="slide">
-	<h2>theme switching</h2>
-  <pre>var key_theme_array = {};
-key_theme_array['49'] = 'default';
-key_theme_array['50'] = 'firefox';
-key_theme_array['51'] = 'light';
-key_theme_array['52'] = 'dark';
-key_theme_array['53'] = 'aurora';
-key_theme_array['54'] = 'nightly';
-$(this).keyup(function(e){
-  if (key_theme_array.hasOwnProperty(e.which)) {
-    var theme_css = 'themes/style/mozilla/sandstone.' + key_theme_array[e.which] + '.css';
-    $('#theme').attr('href', theme_css);
-  }
-});
-</pre>
+  <h1>So are CVS and Subversion</h1>
 </section>
 
 <section class="slide">
-  <h1>tabzilla</h1>
+  <h2>Small and Fast</h2>
+  <table class="benchmarks">
+    <tbody>
+      <tr>
+        <th>Operation</th>
+        <th>&nbsp;</th>
+        <th class="right">Git</th>
+        <th class="right">SVN</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr><td nowrap="">Commit Files (A)</td><td class="desc">Add, commit and push 113 modified files (2164+, 2259-)</td><td class="number"> 0.64</td><td class="number"> 2.60</td><td class="number">4x</td></tr>
+      <tr><td nowrap="">Commit Images (B)</td><td class="desc">Add, commit and push 1000 1k images</td><td class="number"> 1.53</td><td class="number">24.70</td><td class="number">16x</td></tr>
+      <tr><td nowrap="">Diff Current</td><td class="desc">Diff 187 changed files (1664+, 4859-) against last commit</td><td class="number"> 0.25</td><td class="number"> 1.09</td><td class="number">4x</td></tr>
+      <tr><td nowrap="">Diff Recent</td><td class="desc">Diff against 4 commits back (269 changed/3609+,6898-)</td><td class="number"> 0.25</td><td class="number"> 3.99</td><td class="number">16x</td></tr>
+      <tr><td nowrap="">Diff Tags</td><td class="desc">Diff two tags against each other (v1.9.1.0/v1.9.3.0 )</td><td class="number"> 1.17</td><td class="number">83.57</td><td class="number">71x</td></tr>
+      <tr><td nowrap="">Log (50)</td><td class="desc">Log of the last 50 commits (19k of output)</td><td class="number"> 0.01</td><td class="number"> 0.38</td><td class="number">31x</td></tr>
+      <tr><td nowrap="">Log (All)</td><td class="desc">Log of all commits (26,056 commits - 9.4M of output)</td><td class="number"> 0.52</td><td class="number">169.20</td><td class="number">325x</td></tr>
+      <tr><td nowrap="">Log (File)</td><td class="desc">Log of the history of a single file (array.c - 483 revs)</td><td class="number"> 0.60</td><td class="number">82.84</td><td class="number">138x</td></tr>
+      <tr><td nowrap="">Update</td><td class="desc">Pull of Commit A scenario (113 files changed, 2164+, 2259-)</td><td class="number"> 0.90</td><td class="number"> 2.82</td><td class="number">3x</td></tr>
+      <tr><td nowrap="">Blame</td><td class="desc">Line annotation of a single file (array.c)</td><td class="number"> 1.91</td><td class="number"> 3.04</td><td class="number">1x</td></tr>
+    </tbody>
+  </table>
+  <cite><a href="http://git-scm.com/about/small-and-fast">http://git-scm.com/about/small-and-fast</a></cite>
 </section>
 
 <section class="slide">
-	<h2><a href="https://github.com/groovecoder/deckjs-iframes">deck.iframes.js</a></h2>
-  <pre>&lt;script src="extensions/deck.iframes.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-  $(function() {
-    $.deck('iframes');
-  });
-&lt;/script&gt;</pre>
+  <h2>Branches are cheap</h2>
+  <ul>
+    <li><a href="http://danielkummer.github.io/git-flow-cheatsheet/">git-flow</a></li>
+    <li><a href="https://github.com/mozilla/kuma/network">branch ALL the things</a> (esp. for pull requests and reviews)</li>
+  </ul>
 </section>
 
 <section class="slide">
-	<h2>iframe's</h2>
-  <iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"></iframe>
-  <pre>&lt;iframe src="http://christianheilmann.com/2012/08/09/the-myth-of-the-portable-presentation-in-slide-form/"&gt;&lt;/iframe&gt;</pre>
+  <h2>Distributed</h2>
+  <img src="http://www.attunix.com/images/posts/003/centr-decentr.png"/>
 </section>
 
 <section class="slide">
-  <h2><a href="https://github.com/groovecoder/deckjs-remote#quickstart-with-slide-casting-boilerplate-presentation">quick-start</a></h2>
-  <img src="http://content.screencast.com/users/groovecoder/folders/Jing/media/d0d5289e-b7a9-47eb-be1e-2ff6bd4c3eff/00000658.png"/>
+  <h2>Distributed</h2>
+  <ul>
+    <li>reflog to the rescue!</li>
+    <li>local hooks (e.g., <a href="https://github.com/madzak/tfs-git-hook">tfs-git-hook</a>)</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Why GitHub?</h2>
+  <ul>
+    <li>Cloudy</li>
+    <li>Collaboration</li>
+    <li>Services</li>
+    <li>Open Source stuff</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Cloudy</h2>
+  <ul>
+    <li>no server to maintain</li>
+    <li><a href="https://github.com/groovecoder/vim">backup and file sync</a></li>
+    <li><a href="http://groovecoder.github.io/presentations/%7Btown%7D_web_devs/assets/fallback/index.html">free web pages</a> (<a href="https://github.com/groovecoder/groovecoder.github.com">source</a>)</li>
+    <li>API</li>
+  </ul>
+</section>
+  
+<section class="slide">
+  <h2>Collaboration</h2>
+  <ul>
+    <li><a href="https://github.com/localwiki/localwiki/issues?state=open">Issue tracking</a> (extensions via API - e.g., <a href="http://huboard.com/groovecoder/wp-promote-mdn/board">Huboard</a>)</li>
+    <li><a href="https://github.com/mozilla/kuma/pull/963">Pull Requests & Code Reviews</a></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2><a href="https://github.com/mozilla/kuma/settings/hooks">Services</a></h2>
+  <ul>
+    <li>Notifications - RSS, Email, IRC, Jabber, more</li> 
+    <li>Issue updates - GitHub (duh), <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=868103#c2">Bugzilla</a>, AgileBench, AgileZen, Basecamp, Campfire, FogBugz, Jira, Kanbanery, Trac, Trello, more</li>
+    <li>Continuous Integration - AppHarbor, Bamboo, <a href="https://ci.mozilla.org/job/mdn/">Jenkins</a>, <a href="https://travis-ci.org/localwiki/localwiki">Travis</a>, TeamCity, more (auto-test <a href="https://travis-ci.org/localwiki/localwiki/pull_requests">pull requests</a>)</li>
+    <li>Code quality - <a href="https://codeclimate.com/?v=asp">CodeClimate</a>, etc.?</li>
+    <li>Docs - <a href="https://readthedocs.org/">ReadTheDocs</a></li>
+    <li><a href="https://help.github.com/articles/post-receive-hooks">Post-Receive web hooks</a></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Open Source</h2>
+  <ul>
+    <li>Unlimited features for public/open-source repos</li>
+    <li>Everyone's doing it</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Get started!</h2>
+  <ul>
+    <li><a href="https://help.github.com">help.github.com</a></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Links ... Questions?</h2>
+  <ul>
+    <li><a href="https://help.github.com">help.github.com</a></li>
+    <li><a href="http://learn.github.com">learn.github.com</a></li>
+    <li><a href="http://git-scm.com/">git-scm.com</a></li>
+  </ul>
+  <h3>Also</h3>
+  <ul>
+    <li><a href="http://tulsaschoolofdev.com/">Tulsa School of Dev</a></li>
+    <li><a href="http://ndochtulsa.eventbrite.com/">Tulsa National Day of Civic Hacking</a></li>
+    <li><a href="http://200ok.us/">200 OK</a></li>
+  </ul>
 </section>
 
 <!-- End slides. -->
